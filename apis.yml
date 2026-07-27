@@ -1,7 +1,28 @@
 aid: instaagent
-name: Instaagent
-description: Instaagent is a company surfaced as a portfolio company of y-combinator and added to the
-  API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/instaagent.png
+name: InstaAgent
+description: >-
+  InstaAgent is a Y Combinator-backed AI marketing platform that turns a single
+  campaign brief into hundreds of audience-specific creatives. It generates
+  persona-, trend-, and format-grounded ad variants, distributes them across
+  Meta, TikTok, and niche social accounts built for specific audiences, then
+  tests which personas, hooks, formats, and channels drive performance and
+  scales the winners into the next campaign. The company reports serving 500+
+  clients across 10+ countries with 10x ad variants and 30%+ ROI improvement.
+  InstaAgent operates a marketing product surface only and does not currently
+  publish a public developer API, SDKs, or developer documentation; this profile
+  captures its public identity and domain-security posture.
 url: https://raw.githubusercontent.com/api-evangelist/instaagent/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,12 +32,33 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
+- Marketing
+- Advertising
+- Artificial Intelligence
+- Social Media
+- Campaigns
+- Content Generation
+- Y Combinator
 apis: []
+common:
+- type: Website
+  url: https://instaagent.com/
+- type: TermsOfService
+  url: https://instaagent.com/terms-and-condition
+- type: ContentSignal
+  url: well-known/instaagent-robots.txt
+- type: DomainSecurity
+  url: security/instaagent-domain-security.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

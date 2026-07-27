@@ -1,0 +1,35 @@
+generated: '2026-07-19'
+method: searched
+source: https://instaagent.com/
+host: https://instaagent.com
+documents:
+- path: /.well-known/security.txt
+  status: 404
+- path: /.well-known/openid-configuration
+  status: 404
+- path: /.well-known/oauth-authorization-server
+  status: 404
+- path: /llms.txt
+  status: 404
+- path: /openapi.json
+  status: 404
+- path: /robots.txt
+  status: 200
+  file: instaagent-robots.txt
+- path: /sitemap.xml
+  status: 200
+# The site is a single-page app; no developer / API surface (no docs., api.,
+# developer. subdomains resolve). robots.txt carries a Cloudflare-managed
+# AI-preference Content-Signal and blocks major AI training crawlers.
+content_signal: search=yes,ai-train=no,use=reference
+ai_bots_disallowed:
+- CCBot
+- ClaudeBot
+- CloudflareBrowserRenderingCrawler
+- Google-Extended
+- GPTBot
+- meta-externalagent
+sitemap_urls:
+- https://instaagent.com/
+- https://instaagent.com/zh
+- https://instaagent.com/terms-and-condition
