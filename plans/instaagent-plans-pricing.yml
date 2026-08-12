@@ -1,0 +1,29 @@
+generated: '2026-08-12'
+method: searched
+source: https://instaagent.com/
+name: InstaAgent plans and pricing
+provider: InstaAgent
+plan_count: 0
+currency: null
+plans: []
+note: >-
+  InstaAgent publishes no pricing at all. The marketing site (instaagent.com) is
+  a single-page Next.js app whose only conversion path is a "Request Demo"
+  call-to-action and a direct mailto to kyle@instaagent.com; there is no plans,
+  packages, or pricing page. https://instaagent.com/pricing returns HTTP 404,
+  the published sitemap.xml lists only three URLs (/, /zh, /terms-and-condition)
+  and none of them is a pricing page, and there is no /signup or /login route
+  (both 404), so there is no self-serve tier to read a price from either. This
+  is a sales-gated, enterprise/agency motion: price is quoted per engagement
+  after a demo. plan_count is an honest zero, not an unchecked field.
+evidence:
+- url: https://instaagent.com/pricing
+  status: 404
+- url: https://instaagent.com/signup
+  status: 404
+- url: https://instaagent.com/sitemap.xml
+  status: 200
+  note: lists /, /zh and /terms-and-condition only
+- url: https://instaagent.com/
+  status: 200
+  note: '"Request Demo" CTA and mailto:kyle@instaagent.com are the only entry points'

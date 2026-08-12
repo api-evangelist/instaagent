@@ -32,7 +32,7 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-19'
+modified: '2026-08-12'
 tags:
 - Company
 - Marketing
@@ -52,13 +52,52 @@ common:
   url: well-known/instaagent-robots.txt
 - type: DomainSecurity
   url: security/instaagent-domain-security.yml
+- type: LLMsTxt
+  url: llms/instaagent-llms.txt
+- type: Plans
+  url: plans/instaagent-plans-pricing.yml
+- type: Contact
+  url: https://instaagent.com/#contact
+- type: LinkedIn
+  url: https://www.linkedin.com/company/112974856/
+- type: X
+  url: https://x.com/InstaAgentAI
+- type: Instagram
+  url: https://www.instagram.com/instaagent.ai
+- type: Facebook
+  url: https://www.facebook.com/profile.php?id=61575219352924
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 x-enrichment:
-  date: '2026-07-19'
-  status: backfilled
+  date: '2026-08-12'
+  status: minimal
+  artifacts_added: 2
   pass: local-v1
-  note: backfilled from .gitignore signal + verified work evidence
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    InstaAgent ships only an end-user marketing product: instaagent.com is a
+    three-URL Next.js site whose sitemap lists just /, /zh and
+    /terms-and-condition, no api./docs./developer./app. subdomain resolves in
+    DNS, there is no GitHub organization, and the sole conversion path is a
+    "Request Demo" CTA with a mailto to kyle@instaagent.com.
+  evidence:
+  - url: https://instaagent.com/
+    status: 200
+  - url: https://instaagent.com/openapi.json
+    status: 404
+  - url: https://instaagent.com/docs
+    status: 404
+  - url: https://instaagent.com/developers
+    status: 404
+  - url: https://instaagent.com/.well-known/agent-card.json
+    status: 404
+  - url: https://instaagent.com/llms.txt
+    status: 404
+  - url: https://api.github.com/orgs/instaagent
+    status: 404
+  checked: '2026-08-12'

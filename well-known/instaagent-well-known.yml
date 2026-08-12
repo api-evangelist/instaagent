@@ -1,5 +1,5 @@
-generated: '2026-07-19'
-method: searched
+generated: '2026-08-12'
+method: probed
 source: https://instaagent.com/
 host: https://instaagent.com
 documents:
@@ -9,18 +9,58 @@ documents:
   status: 404
 - path: /.well-known/oauth-authorization-server
   status: 404
+- path: /.well-known/oauth-protected-resource
+  status: 404
+- path: /.well-known/api-catalog
+  status: 404
+- path: /.well-known/ai-plugin.json
+  status: 404
+- path: /.well-known/agent-card.json
+  status: 404
+- path: /.well-known/agent.json
+  status: 404
 - path: /llms.txt
   status: 404
 - path: /openapi.json
+  status: 404
+- path: /openapi.yaml
+  status: 404
+- path: /swagger.json
+  status: 404
+- path: /v1/openapi.json
+  status: 404
+- path: /api-docs
+  status: 404
+- path: /docs
+  status: 404
+- path: /redoc
+  status: 404
+- path: /api
+  status: 404
+- path: /developers
+  status: 404
+- path: /login
+  status: 404
+- path: /pricing
   status: 404
 - path: /robots.txt
   status: 200
   file: instaagent-robots.txt
 - path: /sitemap.xml
   status: 200
-# The site is a single-page app; no developer / API surface (no docs., api.,
-# developer. subdomains resolve). robots.txt carries a Cloudflare-managed
-# AI-preference Content-Signal and blocks major AI training crawlers.
+# NO WellKnown POINTER IS EMITTED: every /.well-known/* path returns 404, and the
+# 404 body is the Next.js HTML error shell (text/html, ~13KB) rather than a
+# document. Recording the absence is the finding; asserting a WellKnown surface
+# the provider does not serve would be false credit.
+#
+# Contract discovery (2026-08-12, pipeline step 0b) missed on every avenue:
+#   * No api./docs./developer./developers./app. subdomain resolves in DNS.
+#   * OpenAPI/Swagger probes against the site root all 404.
+#   * There is no /graphql surface and no MCP endpoint to introspect.
+#   * No A2A agent card at either the canonical or the legacy path.
+#   * No GitHub organization named `instaagent` exists (api.github.com 404).
+#   * instaagent.co 301s to instaagent.com; instaagent.ai returns HTTP 525
+#     (Cloudflare origin SSL handshake failure) and serves nothing.
 content_signal: search=yes,ai-train=no,use=reference
 ai_bots_disallowed:
 - CCBot
@@ -33,3 +73,10 @@ sitemap_urls:
 - https://instaagent.com/
 - https://instaagent.com/zh
 - https://instaagent.com/terms-and-condition
+related_hosts:
+- host: instaagent.co
+  status: 301
+  note: redirects to https://instaagent.com/
+- host: instaagent.ai
+  status: 525
+  note: Cloudflare origin SSL handshake failure; no content served

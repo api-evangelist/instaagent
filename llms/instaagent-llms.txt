@@ -1,0 +1,65 @@
+# InstaAgent
+
+> InstaAgent is a Y Combinator-backed (Spring 2026) AI marketing platform that turns a single
+> campaign brief into hundreds of audience-specific creatives. It generates persona-, trend- and
+> format-grounded ad variants, distributes them across Meta, TikTok and niche social accounts built
+> for specific audiences, tests which personas, hooks, formats and channels drive performance, and
+> scales the winners into the next campaign.
+
+InstaAgent Company Limited is operated from a single marketing site at https://instaagent.com/.
+Founders: Kyle Wong (Co-Founder & CEO) and Colin Tseung (Co-Founder). The company reports 500+
+clients across 10+ countries, 10x ad variants and 30%+ ROI improvement, and $1M annual run rate in
+its first ten months.
+
+## Product surface
+
+The product is described in four stages on the public site:
+
+- **Create** — turn one brief into audience-specific creatives grounded in persona, trend and proven format.
+- **Distribute** — launch creatives across Meta, TikTok and niche social accounts built for specific audiences.
+- **Learn** — test which personas, hooks, formats and channels drive performance.
+- **Scale** — scale the winners and make the next campaign smarter.
+
+## No developer API
+
+**InstaAgent publishes no public API.** As of 2026-08-12 there is:
+
+- no OpenAPI, Swagger, GraphQL, AsyncAPI or Protobuf contract at any reachable host;
+- no developer portal, API reference, quickstart or SDK — no `api.`, `docs.`, `developer.`,
+  `developers.` or `app.` subdomain resolves in DNS;
+- no MCP server and no A2A agent card (`/.well-known/agent-card.json` and the legacy
+  `/.well-known/agent.json` both 404);
+- no GitHub organization (`https://api.github.com/orgs/instaagent` returns 404) and therefore no
+  first-party client libraries on npm, PyPI or any other registry;
+- no pricing page, no self-serve sign-up and no status page.
+
+Access to the platform is sales-gated: the only entry points are a "Request Demo" form and
+`kyle@instaagent.com`. Integrations are with the ad platforms InstaAgent buys on (Meta Ads,
+Instagram Ads, TikTok Ads), consumed by InstaAgent — not exposed by it.
+
+## Agent and crawler policy
+
+`https://instaagent.com/robots.txt` carries a Cloudflare-managed Content-Signal of
+`search=yes, ai-train=no, use=reference` and disallows CCBot, ClaudeBot,
+CloudflareBrowserRenderingCrawler, Google-Extended, GPTBot and meta-externalagent. The site permits
+search indexing and reference use, but refuses AI training.
+
+## Links
+
+- Website: https://instaagent.com/
+- Terms and conditions: https://instaagent.com/terms-and-condition
+- Chinese-language site: https://instaagent.com/zh
+- Y Combinator profile: https://www.ycombinator.com/companies/instaagent
+- LinkedIn: https://www.linkedin.com/company/112974856/
+- X: https://x.com/InstaAgentAI
+- Instagram: https://www.instagram.com/instaagent.ai
+- Facebook: https://www.facebook.com/profile.php?id=61575219352924
+- Contact: kyle@instaagent.com
+
+## Provenance
+
+Generated 2026-08-12 by the API Evangelist enrichment pipeline from this repository's apis.yml and
+probed artifacts (well-known/instaagent-well-known.yml, security/instaagent-domain-security.yml,
+plans/instaagent-plans-pricing.yml). InstaAgent does not publish an llms.txt of its own
+(https://instaagent.com/llms.txt returns 404); this file is a faithful generation from verified
+material, not a copy of a provider document.
